@@ -1,0 +1,104 @@
+#logoimg {
+    width: 80px;
+    height: 80px;
+    border-radius: 25%;
+    vertical-align: middle;
+    padding: 5px;
+
+}
+
+header {
+    text-align: center;
+    padding: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.637);
+    margin-bottom: 20px;
+    border-radius: 0 0 20px 20px;
+    background-color: rgba(255, 255, 255, 0.616);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-top: 2px solid rgba(0, 0, 0, 0.637);
+    background-color: rgba(255, 255, 255, 0.616);
+    border-radius: 20px 20px 0 0;
+    font-size: 18px;
+    color: #555;
+    font-weight: bolder;
+}
+
+body {
+    background-image: url('https://plus.unsplash.com/premium_photo-1697729447666-c39f50d595ea?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwY29sbGVnZXxlbnwwfHwwfHx8MA%3D%3D');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 20%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}
+
+#navbar a {
+    color: black;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+#content {
+    background-color: rgba(255, 255, 255, 0.616);
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#content p {
+    font-size: 18px;
+    color: #555;
+    font-weight: bolder;
+    line-height: 1.6;
+}
+
+#login {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.616);
+    border-radius: 15px;
+    margin-top: 15px;
+    padding: 20px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#login input {
+    width: 90%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    text-align: center;
+}
+
+#login label {
+    font-weight: bold;
+    font-size: 15px;
+    color: #333;
+
+}
+
+#login button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
