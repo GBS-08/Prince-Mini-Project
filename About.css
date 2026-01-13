@@ -1,0 +1,87 @@
+header {
+    text-align: center;
+    padding: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.637);
+    margin-bottom: 20px;
+    border-radius: 0 0 20px 20px;
+    background-color: rgba(255, 255, 255, 0.475);
+}
+body {
+    background-image: url('https://plus.unsplash.com/premium_photo-1697729447666-c39f50d595ea?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwY29sbGVnZXxlbnwwfHwwfHx8MA%3D%3D');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}
+#logoimg {
+    width: 80px;
+    height: 80px;
+    border-radius: 25%;
+    vertical-align: middle;
+    padding: 5px;
+}
+#navbar a {
+    color: black;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-top: 2px solid rgba(0, 0, 0, 0.637);
+    background-color: rgba(255, 255, 255, 0.616);
+    border-radius: 20px 20px 0 0;
+    font-size: 18px;
+    color: #555;
+    font-weight: bolder;
+}
+h2 {
+    text-align: center;
+    color: #333;
+}
+#AboutUsContent{
+    background-color: rgba(255, 255, 255, 0.514);
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    text-align: center;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-top: 2px solid rgba(0, 0, 0, 0.637);
+    background-color: rgba(255, 255, 255, 0.616);
+    border-radius: 20px 20px 0 0;
+    font-size: 18px;
+    color: #555;
+    font-weight: bolder;
+}
+
+#AboutUsContent p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #444;
+    font-weight: bolder;
+}
+
+#ContactInfo {
+    background-color: rgba(255, 255, 255, 0.514);
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #444;
+    font-weight: bolder;
+}
