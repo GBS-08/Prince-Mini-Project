@@ -15,6 +15,9 @@ header {
     border-radius: 0 0 20px 20px;
     background-color: rgba(255, 255, 255, 0.616);
 }
+#Prince{
+    text-shadow: 2px 3px 3px gray;
+}
 
 footer {
     text-align: center;
@@ -101,4 +104,5 @@ h2 {
     border-radius: 5px;
     font-size: 15px;
     cursor: pointer;
+
 }
