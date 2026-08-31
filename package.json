@@ -1,17 +1,35 @@
 {
   "name": "pdkv-college",
-  "version": "3.8.7",
-  "description": "Prince Dr K Vasudevan College Website",
+  "version": "4.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Prince Dr K Vasudevan College of Engineering and Technology — official website",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.4",
-    "@vercel/speed-insights": "^2.0.0"
+    "@vercel/speed-insights": "^2.0.0",
+    "framer-motion": "^11.11.17",
+    "lucide-react": "^0.462.0",
+    "react": "^18.3.1",
+    "react-router-dom": "^6.28.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.39.5",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.5.5",
+    "globals": "^17.11.0",
+    "postcss": "^8.4.49",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.15",
     "vite": "^6.3.1"
   }
 }
