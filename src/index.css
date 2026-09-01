@@ -1,0 +1,280 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   PDKV College — global stylesheet
+   Only holds what Tailwind utilities cannot express cleanly:
+   design tokens, base normalisation, scrollbars, a11y helpers and the
+   shared design-system classes (built with @apply so Tailwind stays the
+   single source of truth for the values).
+   ========================================================================== */
+
+@layer base {
+  :root {
+    --primary: #1a237e;
+    --primary-light: #3949ab;
+    --primary-dark: #0d1555;
+    --accent: #4caf50;
+    --accent-dark: #388e3c;
+    --accent-light: #81c784;
+    --accent2: #2196f3;
+    --accent2-dark: #1565c0;
+    --accent2-light: #64b5f6;
+    --gold: #ff9800;
+    --gold-dark: #e65100;
+    --danger: #f44336;
+    --danger-dark: #c62828;
+
+    --text-dark: #0f172a;
+    --text-body: #374151;
+    --text-muted: #6b7280;
+    --text-light: #9ca3af;
+    --bg-light: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-subtle: #f1f5f9;
+    --border: #e5e7eb;
+
+    --header-height: 88px;
+  }
+
+  @media (max-width: 1024px) {
+    :root {
+      --header-height: 80px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    :root {
+      --header-height: 70px;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-surface-light font-body text-ink-body antialiased;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  img {
+    @apply block max-w-full;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  ::selection {
+    background: rgba(76, 175, 80, 0.25);
+    color: var(--primary);
+  }
+
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-subtle);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--accent), var(--accent2));
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(var(--accent-dark), var(--accent2-dark));
+  }
+
+  *:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 5px;
+  }
+}
+
+@layer components {
+  /* ── Layout primitives ────────────────────────────────────────── */
+  .container-page {
+    @apply mx-auto w-full max-w-[1300px] px-[clamp(16px,4vw,44px)];
+  }
+
+  .section-block {
+    @apply py-[clamp(60px,8vw,100px)];
+  }
+
+  /* ── Titles ───────────────────────────────────────────────────── */
+  .section-title {
+    @apply text-center font-heading text-[clamp(1.75rem,4vw,2.75rem)] font-extrabold leading-[1.2] tracking-[-0.02em] text-primary;
+  }
+
+  .section-title-light {
+    @apply text-white;
+  }
+
+  .section-title-grad {
+    @apply bg-gradient-to-br from-primary via-accent2 to-accent bg-clip-text text-transparent;
+  }
+
+  .section-subtitle {
+    @apply mx-auto max-w-[580px] text-center text-[clamp(0.92rem,1.5vw,1.08rem)] leading-[1.75] text-ink-muted;
+  }
+
+  .section-subtitle-light {
+    @apply text-white/70;
+  }
+
+  .title-underline {
+    @apply mx-auto h-1 w-[72px] origin-center animate-underline-grow rounded bg-gradient-to-r from-accent to-accent2;
+  }
+
+  /* ── Buttons ──────────────────────────────────────────────────── */
+  .btn {
+    @apply relative inline-flex cursor-pointer items-center gap-2 overflow-hidden whitespace-nowrap rounded-full border-0 px-7 py-3 font-body text-[0.92rem] font-bold tracking-[0.01em] no-underline transition-all duration-[450ms] ease-bounce
+      after:absolute after:inset-0 after:rounded-full after:bg-white/0 after:transition-colors after:duration-[250ms] hover:after:bg-white/[0.14]
+      disabled:cursor-not-allowed disabled:opacity-[0.58] disabled:!transform-none disabled:!shadow-none;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-br from-accent to-accent-dark text-white shadow-[0_4px_16px_rgba(76,175,80,0.30)] hover:-translate-y-[3px] hover:scale-[1.03] hover:shadow-[0_10px_32px_rgba(76,175,80,0.48)];
+  }
+
+  .btn-secondary {
+    @apply bg-gradient-to-br from-accent2 to-accent2-dark text-white shadow-[0_4px_16px_rgba(33,150,243,0.28)] hover:-translate-y-[3px] hover:scale-[1.03] hover:shadow-[0_10px_32px_rgba(33,150,243,0.45)];
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary bg-transparent text-primary hover:-translate-y-0.5 hover:bg-primary hover:text-white hover:shadow-blue;
+  }
+
+  .btn-danger {
+    @apply bg-gradient-to-br from-danger to-danger-dark text-white shadow-[0_4px_16px_rgba(244,67,54,0.28)] hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(244,67,54,0.40)];
+  }
+
+  .btn-glass {
+    @apply inline-flex cursor-pointer items-center gap-2 rounded-full border-[1.5px] border-white/40 bg-white/[0.13] px-[26px] py-3 text-[0.92rem] font-bold text-white no-underline backdrop-blur-[12px] transition-all duration-[320ms] ease-bounce hover:-translate-y-[3px] hover:scale-[1.04] hover:border-white/[0.55] hover:bg-white/[0.26] hover:shadow-[0_10px_28px_rgba(0,0,0,0.22)];
+  }
+
+  /* ── Badges ───────────────────────────────────────────────────── */
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-[11px] py-1 text-[0.76rem] font-bold tracking-[0.01em] transition-transform duration-[220ms] ease-bounce hover:scale-[1.07];
+  }
+  .badge-green {
+    @apply border border-accent/20 bg-accent/[0.12] text-accent-dark;
+  }
+  .badge-blue {
+    @apply border border-accent2/20 bg-accent2/[0.12] text-accent2-dark;
+  }
+  .badge-red {
+    @apply border border-danger/20 bg-danger/[0.12] text-danger-dark;
+  }
+  .badge-gold {
+    @apply border border-gold/20 bg-gold/[0.12] text-gold-dark;
+  }
+
+  /* ── Forms ────────────────────────────────────────────────────── */
+  .form-group {
+    @apply mb-[14px];
+  }
+
+  .form-label {
+    @apply mb-[7px] flex items-center gap-1.5 text-[0.82rem] font-bold tracking-[0.01em] text-ink-dark;
+  }
+
+  .form-label i {
+    @apply text-[0.78rem] text-accent2;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    @apply box-border w-full rounded-sm border-[1.5px] border-line bg-white px-[15px] py-[11px] font-body text-[0.92rem] text-ink-body outline-none transition-all duration-[320ms] ease-smooth
+      placeholder:text-ink-light
+      hover:[&:not(:focus)]:border-accent/40
+      focus:-translate-y-px focus:border-accent focus:shadow-[0_0_0_4px_rgba(76,175,80,0.12)];
+  }
+
+  .form-textarea {
+    @apply min-h-[95px] resize-y;
+  }
+
+  .form-select {
+    @apply cursor-pointer appearance-none;
+  }
+
+  /* ── Cards ────────────────────────────────────────────────────── */
+  .card {
+    @apply overflow-hidden rounded-lg border border-black/[0.04] bg-white shadow-md transition-all duration-500 ease-soft hover:-translate-y-2.5 hover:scale-[1.01] hover:border-accent/[0.12] hover:shadow-xl;
+  }
+
+  /* ── Scroll reveal ────────────────────────────────────────────── */
+  .reveal {
+    @apply translate-y-10 opacity-0;
+    transition:
+      opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.7s cubic-bezier(0.34, 1.2, 0.64, 1);
+  }
+
+  .reveal.is-visible {
+    @apply translate-y-0 opacity-100;
+  }
+
+  /* ── Loading helpers ──────────────────────────────────────────── */
+  .spinner {
+    @apply mx-auto my-9 h-[42px] w-[42px] animate-spin-fast rounded-full border-4 border-accent/[0.14] border-t-accent shadow-[0_0_18px_rgba(76,175,80,0.28)];
+  }
+
+  .skeleton {
+    @apply animate-skeleton-pulse rounded-lg;
+    background: linear-gradient(90deg, #e9ecef 25%, #f1f3f5 50%, #e9ecef 75%);
+    background-size: 200% 100%;
+  }
+
+  /* ── Page hero shared shimmer overlay ─────────────────────────── */
+  .page-hero-shimmer::after {
+    content: '';
+    @apply pointer-events-none absolute inset-0 z-[1] animate-hero-shimmer;
+    background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.03) 50%, transparent 60%);
+    background-size: 200% 100%;
+  }
+
+  /* ── Typewriter caret ─────────────────────────────────────────── */
+  .typed-cursor {
+    @apply ml-0.5 inline-block h-[1em] w-0.5 animate-cursor-blink bg-current align-text-bottom;
+  }
+
+  /* ── Rich text used by notice bodies / prose blocks ───────────── */
+  .prose-body p + p {
+    @apply mt-3;
+  }
+}
+
+@layer utilities {
+  .text-gradient-brand {
+    @apply bg-gradient-to-br from-primary to-accent2-dark bg-clip-text text-transparent;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Respect the user's motion preferences everywhere. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
